@@ -2,9 +2,6 @@ package Controle;
 
 import java.util.ArrayList;
 
-/**
- * @author Isaque Véras
- */
 public class Aplicacao {
 	private int qtdPopulacao = 0;
 	private int qtdTiposDeVacinas = 0;
@@ -51,7 +48,7 @@ public class Aplicacao {
 		System.out.println("\n-> "+ vacinas.size() +" tipos de vacinas");
 		for (Vacina vacina : vacinas) 
 			if(vacina instanceof Vacina) {
-				System.out.println("id: "+ v +"\t| Nome: " +((Vacina) vacina).getNome() + "\t| Descrição: " + ((Vacina) vacina).getDescricao() + "\t| Quantidade: " + ((Vacina) vacina).getQtdVacinas() + " \t| Faixa Etária: " + ((Vacina) vacina).getfaixaEtariaInicio() + " à " + ((Vacina) vacina).getfaixaEtariaFim());
+				System.out.println("id: "+ v +"\t| Nome: " +((Vacina) vacina).getNome() + "\t| Descriï¿½ï¿½o: " + ((Vacina) vacina).getDescricao() + "\t| Quantidade: " + ((Vacina) vacina).getQtdVacinas() + " \t| Faixa Etï¿½ria: " + ((Vacina) vacina).getfaixaEtariaInicio() + " ï¿½ " + ((Vacina) vacina).getfaixaEtariaFim());
 				v++;
 			}
 		System.out.println("");
@@ -59,7 +56,7 @@ public class Aplicacao {
 	
 	public void listarPessoas() {
 		int p = 1;
-		System.out.println("\n-> "+ pessoas.size() +" Pessoas (População)");
+		System.out.println("\n-> "+ pessoas.size() +" Pessoas (Populaï¿½ï¿½o)");
 		for (Pessoa pessoa : pessoas)
 			if(pessoa instanceof Pessoa) {
 				System.out.println("id: "+p+" \t| Nome: " + ((Pessoa) pessoa).getNome() + "\t| Idade: " + ((Pessoa) pessoa).getIdade() + " anos \t| Bairro: " + ((Pessoa) pessoa).getBairro());
@@ -106,8 +103,8 @@ public class Aplicacao {
 		indexPessoa--;
 		indexVacina--;
 		if (pessoas.get(indexPessoa).getIdade() >= vacinas.get(indexVacina).getfaixaEtariaInicio() && pessoas.get(indexPessoa).getIdade() <= vacinas.get(indexVacina).getfaixaEtariaFim()) { // Para continuar, tem que se encaixar na faixa de idade!	
-			/* Só pode vacinar se existir vacinas, e se o restante que falta para ser 
-			 * vacinado for menor ou igual a quantidade de pessoas não vacinadas */
+			/* Sï¿½ pode vacinar se existir vacinas, e se o restante que falta para ser 
+			 * vacinado for menor ou igual a quantidade de pessoas nï¿½o vacinadas */
 			if (vacinas.get(indexVacina).getQtdVacinas() >= 1 && 1 <= vacinas.get(indexVacina).getPessoasNaoVacinadas()) {
 				vacinas.get(indexVacina).setPessoasVacinadas(1 + vacinas.get(indexVacina).getPessoasVacinadas());
 				vacinas.get(indexVacina).setQtdVacinas(vacinas.get(indexVacina).getQtdVacinas() - 1);
@@ -116,35 +113,35 @@ public class Aplicacao {
 				
 				System.out.println(pessoas.get(indexPessoa).getNome() + " com "+ pessoas.get(indexPessoa).getIdade() +" anos, foi vacinado com a vacina " + vacinas.get(indexVacina).getNome());
 			} else if (vacinas.get(indexVacina).getQtdVacinas() == 0) {
-				System.out.println("fail: não é possível vacinar " + pessoas.get(indexPessoa).getNome() + ", pois não tem vacina disponível");
+				System.out.println("fail: nï¿½o ï¿½ possï¿½vel vacinar " + pessoas.get(indexPessoa).getNome() + ", pois nï¿½o tem vacina disponï¿½vel");
 			}else {
-				System.out.println("fail: não é possível vacinar " + pessoas.get(indexPessoa).getNome() + ", pois não tem vacina disponível");
+				System.out.println("fail: nï¿½o ï¿½ possï¿½vel vacinar " + pessoas.get(indexPessoa).getNome() + ", pois nï¿½o tem vacina disponï¿½vel");
 			}
 		} else {
-			System.out.println("fail: não é possível vacinar, a idade de "+ pessoas.get(indexPessoa).getNome() +" não se encaixa dentro da faixa etária!");
+			System.out.println("fail: nï¿½o ï¿½ possï¿½vel vacinar, a idade de "+ pessoas.get(indexPessoa).getNome() +" nï¿½o se encaixa dentro da faixa etï¿½ria!");
 		}
 	}
 	
 	public void getPainelDadosVacina(int index) {
-		index--; // Decrementa o index com -1, pois o arrayList começa com 0
+		index--; // Decrementa o index com -1, pois o arrayList comeï¿½a com 0
 		
 		if (vacinas.size() > index) {
 			System.out.println("\n--------------------------------------------------------------------------");
-			System.out.println("---> Vacina "+ vacinas.get(index).getNome() + "\t --> Faixa etária: " + vacinas.get(index).getfaixaEtariaInicio() + " anos à "+ vacinas.get(index).getfaixaEtariaFim() + " anos");
+			System.out.println("---> Vacina "+ vacinas.get(index).getNome() + "\t --> Faixa etï¿½ria: " + vacinas.get(index).getfaixaEtariaInicio() + " anos ï¿½ "+ vacinas.get(index).getfaixaEtariaFim() + " anos");
 			System.out.println("--------------------------------------------------------------------------");
-			System.out.println("Total de Vacinas:\t" + vacinas.get(index).getQtdVacinas() + "\t| População:\t\t\t" + getQtdPopulacao());
-			System.out.println("Pessoas vacinadas:\t" + vacinas.get(index).getPessoasVacinadas() + "\t| Pessoas não vacinadas:\t" + vacinas.get(index).getPessoasNaoVacinadas());
-			System.out.println("Vacinados:\t\t" + vacinas.get(index).getPorcengemVacinados() + "%" + "\t| Não vacinados:\t\t" + vacinas.get(index).getPorcengemNaoVacinados() + "%");
+			System.out.println("Total de Vacinas:\t" + vacinas.get(index).getQtdVacinas() + "\t| Populaï¿½ï¿½o:\t\t\t" + getQtdPopulacao());
+			System.out.println("Pessoas vacinadas:\t" + vacinas.get(index).getPessoasVacinadas() + "\t| Pessoas nï¿½o vacinadas:\t" + vacinas.get(index).getPessoasNaoVacinadas());
+			System.out.println("Vacinados:\t\t" + vacinas.get(index).getPorcengemVacinados() + "%" + "\t| Nï¿½o vacinados:\t\t" + vacinas.get(index).getPorcengemNaoVacinados() + "%");
 			System.out.println("--------------------------------------------------------------------------");
-		} else System.out.println("fail: esse painel não existe");
+		} else System.out.println("fail: esse painel nï¿½o existe");
 	}
 	
 
 	public void getPainelGeral() {
 		System.out.println("\n--------------------------------------------------------------------------");
-		System.out.println("---> Relatório Geral");
+		System.out.println("---> Relatï¿½rio Geral");
 		System.out.println("--------------------------------------------------------------------------");
-		System.out.println("---> População: "+ getQtdPopulacao() + " pessoas" + "\t---> Pessoas vacinadas: "+ getPessoasVacinadas() + " pessoas");
+		System.out.println("---> Populaï¿½ï¿½o: "+ getQtdPopulacao() + " pessoas" + "\t---> Pessoas vacinadas: "+ getPessoasVacinadas() + " pessoas");
 		System.out.println("---> Vacinas: "+ getQtdTiposDeVacinas() + " tipos" + "\t\t---> Quantidade de vacinas: "+ getQtdTotalVacinas());
 		System.out.println("--------------------------------------------------------------------------");
 	}

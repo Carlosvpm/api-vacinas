@@ -1,6 +1,6 @@
 package Controle;
 
-public class Vacina extends Aplicacao {
+public class Agendamento extends Aplicacao {
 	private int qtdVacinas = 0;
 	private String nome;
 	private String descricao;
@@ -58,6 +58,14 @@ public class Vacina extends Aplicacao {
 	
 	public void setfaixaEtariaFim(int faixa) {
 		this.faixaEtariaFim = faixa;
+	}
+
+	public void setAgendamentoFim(int faixa) {
+		this.agendamentoFim = agendamentoFim;
+	}
+
+	public void setAgendamentoInicio(int faixa) {
+		this.agendamentoInicio = agendamentoInicio;
 	}
 
 	public int getPorcengemVacinados() {		

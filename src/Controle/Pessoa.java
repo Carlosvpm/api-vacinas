@@ -1,8 +1,5 @@
 package Controle;
 
-/**
- * @author Isaque Véras
- */
 public class Pessoa {
 	private String nome;
 	private int idade;

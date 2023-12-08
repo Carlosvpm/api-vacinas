@@ -2,9 +2,6 @@ package Controle;
 
 import java.util.Scanner;
 
-/**
- * @author Isaque Véras
- */
 public class MainInterativa {
 	public static void main(String[] args) {
 		Aplicacao app = new Aplicacao(0);
